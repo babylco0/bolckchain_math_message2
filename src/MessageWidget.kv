@@ -1,0 +1,66 @@
+<MessageWidget>:
+    size_hint_y: None
+    height: root.width/5
+    CHButton:
+        id: s_name
+        text: '发送者姓名'
+        size_hint: (None, None)
+        height: root.width/5
+        width: root.width/5
+    BoxLayout:
+        size_hint: (1, 1)
+        orientation: 'vertical'
+        CHButton:
+            id: s_address
+            text: '发送者地址'
+            size_hint: (1, .4)
+            font_size: 24
+        CHButton:
+            id: s_content
+            text: '发送内容'
+            size_hint: (1, .6)
+            font_size: 16
+
+<MessageLayout>:
+    size_hint: (1, None)
+    height: 500
+    orientation: 'vertical'
+    CHButton:
+        id: btn_sender
+        text: 'Sender: '
+        size_hint: (1, None)
+        height: 80
+    CHButton:
+        id: btn_receiver
+        text: 'Receiver: '
+        size_hint: (1, None)
+        height: 80
+    CHTextInput:
+        size_hint: 1, None
+        height: (len(self._lines)+1) * self.line_height
+        id: btn_content
+        height: 240
+        readonly: True
+    CHButton:
+        id: btn_time
+        text: '@'
+        size_hint: (1, None)
+        height: 80
+    Label:
+        size_hint: (1, None)
+        height: 20
+        text: ''
+
+<ChatMessageSend>:
+    size_hint: (1, None)
+    height: 200
+    text_size: self.size
+    halign: 'right'
+    valign: 'middle'
+
+<ChatMessageRecv>:
+    size_hint: (1, None)
+    height: 200
+    text_size: self.size
+    halign: 'left'
+    valign: 'middle'

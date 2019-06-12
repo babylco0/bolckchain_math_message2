@@ -1,0 +1,62 @@
+<ServerLayout>:
+    size_hint: (.8, 1)
+    orientation: 'vertical'
+    CHTextInput:
+        id: server_url
+        size_hint: (1, .8)
+        text: 'http://babylco0-001-site1.site4future.com/message/'
+        auto_indent: True
+    CHButton:
+        id: test_button
+        size_hint: (1, .1)
+        text: '测试'
+        on_press: root.test_configure()
+    CHLabel:
+        id: test_statues
+        size_hint: (1, .1)
+        text: '点击<[color=ff3333]测试[/color]>按钮测试服务器连接状态'
+        markup: True
+
+<SyncMessageLayout>:
+    size_hint: (.8, 1)
+    orientation: 'vertical'
+    CHLabel:
+        id: server_url
+        size_hint: (1, .1)
+        text: '?'
+        markup: True
+    ScrollView:
+        id: scrlv
+        size_hint: (1, .7)
+
+    CHButton:
+        id: test_button
+        size_hint: (1, .1)
+        text: '同步'
+        on_press: root.sync_messages()
+    CHLabel:
+        id: sync_statues
+        size_hint: (1, .1)
+        text: '点击<[color=ff3333]同步[/color]>按钮同步服务器信息'
+        markup: True
+
+<NodeWidget>:
+    orientation: 'horizontal'
+    size_hint: (1, 1)
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (.2, 1)
+        CHToggleButton:
+            size_hint: (1, .1)
+            id: conn_test
+            text: '网络测试'
+            group: 'configure'
+            state: 'down'
+        CHToggleButton:
+            size_hint: (1, .1)
+            id: sync_test
+            text: '同步测试'
+            group: 'configure'
+        CHLabel:
+            size_hint: (1, .8)
+

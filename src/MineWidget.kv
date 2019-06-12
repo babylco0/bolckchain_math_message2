@@ -1,0 +1,46 @@
+<MineWidget>:
+    orientation: 'horizontal'
+    size_hint: (1, 1)
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (.2, 1)
+        CHToggleButton:
+            text: '地址'
+            on_press: key_info.text=root.address
+            group: 'key'
+        CHToggleButton:
+            text: 'RSA 私钥'
+            on_press: key_info.text=root.rsa_prikey
+            group: 'key'
+        CHToggleButton:
+            text: 'RSA 公钥'
+            on_press: key_info.text=root.rsa_pubkey
+            group: 'key'
+        CHToggleButton:
+            text: 'ECC 私钥'
+            on_press: key_info.text=root.ecc_prikey
+            group: 'key'
+        CHToggleButton:
+            text: 'ECC 公钥'
+            on_press: key_info.text=root.ecc_pubkey
+            group: 'key'
+        CHToggleButton:
+            text: 'AES 密钥'
+            on_press: key_info.text=root.aes_key
+            group: 'key'
+        CHToggleButton:
+            text: 'AES 初始'
+            on_press: key_info.text=root.aes_iv
+            group: 'key'
+        CHToggleButton:
+            text: '二维码'
+            on_press: key_info.text="研发中ing..."
+            group: 'key'
+    CHLabel:
+        size_hint: (.8, 1)
+        id: key_info
+        text: '点击左侧按钮显示地址信息'
+        text_size: self.size
+        font_size: 24
+        halign: 'center'
+        valign: 'middle'

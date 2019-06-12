@@ -1,0 +1,23 @@
+<ChatWidget>:
+    size_hint: (1, 1)
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: (1, .1)
+        orientation: 'horizontal'
+        CHTextInput:
+            id: ti_message
+            size_hint: (.8, 1)
+            text: '请输入信息'
+        CHButton:
+            id: button_send
+            size_hint: (.2, 1)
+            text: '发送'
+            on_press: root.send_message()
+    ScrollView:
+        size_hint: (1, .9)
+        GridLayout:
+            id: history_list
+            cols: 1
+            spacing: 10
+            size_hint_y: None
+            height: self.minimum_height

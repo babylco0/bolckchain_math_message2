@@ -1,0 +1,22 @@
+<ContactLayout>:
+    size_hint_y: None
+    height: root.width/5
+    CHButton:
+        id: u_name
+        text: '用户名'
+        size_hint: (None, None)
+        height: root.width/5
+        width: root.width/5
+    BoxLayout:
+        size_hint: (1, 1)
+        orientation: 'vertical'
+        CHButton:
+            id: u_address
+            text: '地址'
+            size_hint: (1, .4)
+            font_size: 24
+        CHButton:
+            id: u_pubkey
+            text: '公钥'
+            size_hint: (1, .6)
+            font_size: 16

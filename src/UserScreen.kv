@@ -1,0 +1,63 @@
+<UserScreen>
+    BoxLayout:
+        orientation: 'vertical'
+        CHLabel:
+            id: label_tips
+            size_hint: (1, None)
+            height: 160
+            text: '<提示信息>'
+            markup: True
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .1)
+            CHButton:
+                id: reset_user
+                size_hint: (.2, 1)
+                text: '返回帮助'
+                on_press: root.show_help()
+            CHButton:
+                id: user_name
+                size_hint: (.6, 1)
+                text: root.user_name
+                on_press: root.middle_top_clicked()
+            CHButton:
+                size_hint: (.2, 1)
+                id: btn_right_top
+                text: '配置信息'
+                on_press: root.right_top_clicked()
+        BoxLayout:
+            id: main_widget
+            size_hint: (1, .8)
+            CHLabel:
+                id: doc_help
+                text: '帮助信息'
+                markup: True
+                font_size: 48
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .1)
+            CHToggleButton:
+                id: btn_show_private
+                text: '私有信息'
+                group: 'user'
+                on_press: root.show_private()
+            CHToggleButton:
+                id: show_public
+                text: '公开信息'
+                group: 'user'
+                on_press: root.show_public()
+            CHToggleButton:
+                id: show_contact
+                text: '联系人'
+                group: 'user'
+                on_press: root.show_contact()
+            CHToggleButton:
+                id: show_mine
+                text: '个人信息'
+                group: 'user'
+                on_press: root.show_mine()
+            CHToggleButton:
+                id: show_xxx
+                text: '扫一扫'
+                group: 'user'
+                on_press: root.show_help()
